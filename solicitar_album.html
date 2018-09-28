@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- La cabecera -->
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="Bloc de notas" />
+<meta name="author" content="Sergio Luján Mora" />
+<meta name="keywords" content="HTML5, web" />
+<meta name="description" content="Plantilla base de una página creada con HTML5" />
+<title>Plantilla base de HTML5</title>
+</head>
+<!-- El cuerpo -->
+<body>
+  <h3>Descripción de funcionamineto</h3>
+  <table>
+    <tr>
+      <td><strong>Num. Páginas - </strong></td>
+      <td><strong>Resolución - </strong></td>
+      <td><strong>Color (blanco/negro o color) - </strong></td>
+      <td><strong>Precio</strong></td>
+    </tr>
+    <tr>
+      <td>1-100</td>
+      <td>150-300</td>
+      <td>Color</td>
+      <td>15€</td>
+    </tr>
+    <tr>
+      <td>200-300</td>
+      <td>300-900</td>
+      <td>Blanco/Negro</td>
+      <td>10€</td>
+    </tr>
+  </table>
+
+<form id="solicitar_album" action="index.html" method="post">
+  Nombre Completo: <input type="text" name="nombre" value="" maxlength="200" required><br>
+  Título Álbum: <input type="text" name="titulo" value="" maxlength="200" required><br>
+  Texto Adicional: <input type="text" name="adicional" value="" maxlength="4000"><br>
+  Email: <input type="text" name="email" value="" maxlength="200" required><br>
+  Calle: <input type="text" name="calle" value="" required>
+  Nº Calle: <input type="text" name="ncalle" value="" required>
+  Piso: <input type="text" name="piso" value="">
+  Puerta:  <input type="text" name="puerta" value="" required><br>
+  Código Postal: <input type="text" name="cpostal" value="" required>
+  Localidad: <input type="text" name="localidad" value="" required>
+  Provincia: <input type="text" name="provincia" value="" required>
+  País: <input type="text" name="pais" value="" required><br>
+  Color: <input type="color"><br>
+  Nº de Copias: <input type="number"min="1" name="" value="1" required><br>
+  Resolución:  <input type="range" value="150" name="resolucion" id="resolucion"  min="150" max="900" step="150" onchange="document.getElementById('outresolucion').innerHTML=this.value">
+  <span id="outresolucion">150</span><br>
+  Álbum: <select  name="album">
+          <option value="1">Album1</option>
+          <option value="2">Album2</option>
+          <option value="3">Album3</option>
+
+  </select><br>
+  Fecha: <input type="date" name="fecha" value=""><br>
+  Color: <select  name="colorAlbum">
+          <option value="1">Blanco/Negro</option>
+          <option value="2">Color</option>
+        </select><br>
+<input type="submit" name="Solicitar" value="Solicitar">
+</form>
+
+
+
+  <footer>
+    ©PI-Pictures&Images
+  </footer>
+</body>
+</html>
