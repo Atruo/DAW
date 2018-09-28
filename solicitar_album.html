@@ -43,24 +43,29 @@
 <br>
 
 <form id="solicitar_album" action="solicitar_album.html" method="post">
-  Nombre Completo(*): <input type="text" name="nombre" value="" maxlength="200" required><br>
-  Título Álbum(*): <input type="text" name="titulo" value="" maxlength="200" required><br>
-  Texto Adicional: <input type="text" name="adicional" value="" maxlength="4000"><br>
-  Email(*): <input type="text" name="email" value="" maxlength="200" required><br>
-  Calle: <input type="text" name="calle" value="" >
-  Nº Calle: <input type="text" name="ncalle" value="" >
-  Piso: <input type="text" name="piso" value="">
-  Puerta:  <input type="text" name="puerta" value="" ><br>
-  Código Postal: <input type="text" name="cpostal" value="" >
-  Localidad: <input type="text" name="localidad" value="" >
+  <label>Nombre Completo(*): <input type="text" name="nombre" value="" maxlength="200" required></label>
+  <br>
+  <label>Título Álbum(*): <input type="text" name="titulo" value="" maxlength="200" required></label>
+  <br>
+  <label>Texto Adicional: <input type="text" name="adicional" value="" maxlength="4000"></label>
+  <br>
+  <label>Email(*): <input type="text" name="email" value="" maxlength="200" required></label>
+  <br>
+  <label>Calle: <input type="text" name="calle" value="" ></label>
+  <label>Nº Calle: <input type="text" name="ncalle" value="" ></label>
+  <label>Piso: <input type="text" name="piso" value=""></label>
+  <label>Puerta:  <input type="text" name="puerta" value="" ></label>
+  <br>
+  <label>Código Postal: <input type="text" name="cpostal" value="" ></label>
+  <label>Localidad: <input type="text" name="localidad" value="" ></label>
+
   Provincia:  <select id="busqueda_provincia">
 
  <option value='alava'>Álava</option>
  <option value='albacete'>Albacete</option>
  <option value='alicante'>Alicante/Alacant</option>
-
-
 </select>
+
   País: <select id="busqueda_pais">
 
  <option value='españa'>España</option>
@@ -69,17 +74,22 @@
 
 
 </select><br>
-  Color: <input type="color"><br>
-  Nº de Copias(*): <input type="number"min="1" name="" value="1" required><br>
-  Resolución:  <input type="range" value="150" name="resolucion" id="resolucion"  min="150" max="900" step="150" onchange="document.getElementById('outresolucion').innerHTML=this.value">
+<label>Color: <input type="color"></label>
+  <br>
+  <label>Nº de Copias(*): <input type="number" min="1" name="copias" value="1" required></label>
+<br>
+<label>Resolución:  <input type="range" value="150" name="resolucion" id="resolucion"  min="150" max="900" step="150" onchange="document.getElementById('outresolucion').innerHTML=this.value"></label>
+
   <span id="outresolucion">150</span><br>
   Álbum(*): <select  name="album" required>
-          <option value="1">Album1</option>
+          <option value="">Album1</option>
           <option value="2">Album2</option>
           <option value="3">Album3</option>
 
   </select><br>
-  Fecha: <input type="date" name="fecha" value=""><br>
+  <label>Fecha: <input type="date" name="fecha" value=""></label>
+  <br>
+
   Color: <select  name="colorAlbum">
           <option value="1">Blanco/Negro</option>
           <option value="2">Color</option>
