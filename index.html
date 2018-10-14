@@ -14,21 +14,28 @@
 <body>
   <a href="index.html" class="titulo"><h1 class="Titulo">PI - Pictures & Images</h1></a>
 
-<ul class="sidenav">
-  <li><a href="./index.html" class="active">Inicio</a></li>
-  <li><a href="./registro.html">Registro</a> </li>
-  <li><a href="./buscar.html">Buscar</a> </li>
-  <li><a href="./usuario_registrado.html">Menú Usuario</a></li>
-</ul>
+<nav id="nav_cointainer">
+
+  <ul class="sidenav">
+    <li><a href="./index.html" class="active">Inicio</a></li>
+    <li><a href="./registro.html">Registro</a> </li>
+    <li><a href="./buscar.html">Buscar</a> </li>
+    <li><a href="./usuario_registrado.html">Menú Usuario</a></li>
+    <div class="login_container">
+      <form id="login_form" action="usuario_registrado.html" method="post">
+        <label><input type="text" name="usuario" value="" placeholder="Usuario..." ></label>
+        <label><input type="password" name="psw" value="" placeholder="Contraseña..." ></label>
+        <label><input type="submit" name="login" value="Login" ></label>
+      </form>
+    </div>
+
+  </ul>
+</nav>
 
 
-<aside id="bLogin">
-  <form id="login_form" action="usuario_registrado.html" method="post">
-    <label><input type="text" name="usuario" value="" placeholder="Usuario..." required></label>
-    <label><input type="password" name="psw" value="" placeholder="Contraseña..." required></label>
-    <label><input type="submit" name="login" value="Login" ></label>
-  </form>
-</aside>
+
+
+
   <h3>Últimas Fotos</h3>
   <section id="ultimas_fotos">
       <article class="image fit">

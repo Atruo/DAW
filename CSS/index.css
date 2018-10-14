@@ -47,14 +47,7 @@ input[type=submit]:hover {
     background-color: #BD096B;
 }
 
-#login_form {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-		margin: 1em;
-    margin-top: 3em;
-		height: 20%;
-}
+
  /*Barra de navegacion*/
 
  ul {
@@ -74,7 +67,7 @@ input[type=submit]:hover {
      display: block;
      color: white;
      text-align: center;
-     padding: 14px 16px;
+     padding: 21px 16px;
      text-decoration: none;
  }
 
@@ -193,4 +186,57 @@ article{
     text-align: left;
     background-color: #4CAF50;
     color: white;
+}
+
+#solicitar_album{
+  text-align: justify;
+  width:800px;
+  margin:0 auto;
+}
+#form_registro{
+  width:800px;
+  margin:0 auto;
+  text-align: justify;
+}
+#form_buscar{
+  text-align:  justify;
+  width:800px;
+  margin:0 auto;
+}
+
+
+
+/* Style the input container */
+.login_container {
+  float: right;
+  margin-right: 1em;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.topnav .login_container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login_container button:hover {
+  background: #ccc;
+}
+
+@media only screen and (max-width: 945px) {
+  
 }
