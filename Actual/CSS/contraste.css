@@ -1,8 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Krub');
 @import url('https://fonts.googleapis.com/css?family=Kodchasan');
+.botones{
+  background-color: yellow;
+  color: black;
+}
 
-footer{
+body>footer{
   background-color: yellow;
   color: black;
 }
@@ -76,7 +80,7 @@ input[type=password], select {
 
 input[type=submit] {
 
-    background-color: #yellow;
+    background-color: yellow;
     color: black;
     padding: 14px 20px;
     margin: 8px 0;
@@ -87,7 +91,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #white;
+    background-color: #acacac;
 }
 
 
@@ -167,6 +171,7 @@ footer{
 }
 #bLogin{
   text-align: center;
+  background-color: yellow;
 }
 
 body>footer{
@@ -189,11 +194,11 @@ article{
   margin: 0;
   padding: 0.5em;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: yellow;
 }
 #enlaces_uReg>a.active {
-    background-color: #4CAF50;
-    color: white;
+    background-color: white;
+    color: black;
 }
 #enlaces_uReg>a:hover:not(.active) {
     background-color: #555;
@@ -220,9 +225,9 @@ article{
     padding: 8px;
 }
 
-#tabla tr:nth-child(even){background-color: #f2f2f2;}
+#tabla tr:nth-child(even){background-color: yellow;color: black}
 
-#tabla tr:hover {background-color: #ddd;}
+#tabla tr:hover {background-color: #dcde74; color: black}
 
 #tabla th {
     padding-top: 12px;
@@ -281,6 +286,7 @@ article{
   background: #ccc;
 }
 
-@media only screen and (max-width: 945px) {
-
+.botones{
+  background-color: yellow;
+  color: black;
 }
