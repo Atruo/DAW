@@ -6,6 +6,9 @@ body{
   font-size: 12px;
    font-weight: normal;
 }
+ul{
+  display: none;
+}
 .sidenav{
   display: none;
 }
