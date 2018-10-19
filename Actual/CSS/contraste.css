@@ -46,6 +46,8 @@ h1{
 }
 
 
+
+
 /*ANTIGUO*/
 
 @import url('https://fonts.googleapis.com/css?family=Krub');
@@ -232,9 +234,9 @@ article{
     padding: 8px;
 }
 
-#tabla tr:nth-child(even){background-color: #f2f2f2;}
+#tabla tr:nth-child(even){background-color: #9a9696;}
 
-#tabla tr:hover {background-color: #ddd;}
+#tabla tr:hover {background-color: yellow; color: black;}
 
 #tabla th {
     padding-top: 12px;
@@ -306,7 +308,7 @@ article{
 body>nav>ul>li:hover{
   background-color: #acacac;
 }
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1070px) {
   .nombre_nav{
     display: none;
   }
@@ -420,4 +422,7 @@ input[type=submit]{
 input[type=submit]:hover{
   background-color: #333;
   color: yellow;
+}
+*:focus {
+	outline: 0.25em solid lime;
 }
