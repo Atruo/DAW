@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Krub');
 @import url('https://fonts.googleapis.com/css?family=Kodchasan');
+*{
+font-family: 'Kodchasan', monospace;
+margin: 0;
+box-sizing: border-box;
+}
 .botones{
   background-color: yellow;
   color: black;
@@ -19,10 +24,6 @@ body{
 h1{
   color: yellow;
 }
-a:hover{
-  color: yellow;
-  background-color: yellow;
-}
 
 .sidenav{
   background-color: white;
@@ -38,20 +39,29 @@ a:hover{
   color: black;
 }
 
-.sidenav>li>a:hover{
-  background-color: #acacac;
+
+
+.nombre_nav{
+  color: black;
 }
 
-/*Lo antiguo*/
+
+/*ANTIGUO*/
+
+@import url('https://fonts.googleapis.com/css?family=Krub');
+@import url('https://fonts.googleapis.com/css?family=Kodchasan');
+.burger_check{
+  display: none;
+}
 h1.Titulo{
 
 font-family: 'Krub', monospace;
 
 }
-*{
-font-family: 'Kodchasan', monospace;
-}
 
+h3{
+  margin: .5em;
+}
 
 
 input[type=text], select {
@@ -62,8 +72,6 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: yellow;
-    color: black;
 
 }
 input[type=password], select {
@@ -74,24 +82,21 @@ input[type=password], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-      background-color: yellow;
-      color: black;
 }
 
 input[type=submit] {
 
-    background-color: yellow;
-    color: black;
+    background-color: #FF84C7;
+    color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-
 }
 
 input[type=submit]:hover {
-    background-color: #acacac;
+    background-color: #BD096B;
 }
 
 
@@ -102,7 +107,7 @@ input[type=submit]:hover {
      margin: 0;
      padding: 0;
      overflow: hidden;
-     background-color: #yellow;
+     background-color: #333;
 
  }
 
@@ -112,19 +117,22 @@ input[type=submit]:hover {
 
  li a {
      display: block;
-     color: black;
+     color: white;
      text-align: center;
      padding: 21px 16px;
      text-decoration: none;
  }
 
  li a:hover:not(.active) {
-     background-color: #yellow;
-     color: black;
+     background-color: #111;
  }
 
  .active {
-     background-color: #white;
+     background-color: #363535;
+     color: yellow;
+ }
+ .active .nombre_nav{
+   color: yellow;
  }
  /*FIN Barra de navegacion*/
 
@@ -171,13 +179,12 @@ footer{
 }
 #bLogin{
   text-align: center;
-  background-color: yellow;
 }
 
 body>footer{
 	overflow: hidden;
-	background-color: #yellow;
-	color: #black;
+	background-color: #FF84C7;
+	color: #fff;
 	text-align: center;
 	margin-top: 1em;
 }
@@ -194,11 +201,11 @@ article{
   margin: 0;
   padding: 0.5em;
   width: 200px;
-  background-color: yellow;
+  background-color: #f1f1f1;
 }
 #enlaces_uReg>a.active {
-    background-color: white;
-    color: black;
+    background-color: #4CAF50;
+    color: white;
 }
 #enlaces_uReg>a:hover:not(.active) {
     background-color: #555;
@@ -225,9 +232,9 @@ article{
     padding: 8px;
 }
 
-#tabla tr:nth-child(even){background-color: yellow;color: black}
+#tabla tr:nth-child(even){background-color: #f2f2f2;}
 
-#tabla tr:hover {background-color: #dcde74; color: black}
+#tabla tr:hover {background-color: #ddd;}
 
 #tabla th {
     padding-top: 12px;
@@ -285,8 +292,132 @@ article{
 .topnav .login_container button:hover {
   background: #ccc;
 }
-
+.sidenav>ul>li:first-of-type{
+  display: none;
+}
+#hamburguesita{
+  color: white;
+  background-color: white;
+}
 .botones{
   background-color: yellow;
   color: black;
+}
+body>nav>ul>li:hover{
+  background-color: #acacac;
+}
+@media only screen and (max-width: 1040px) {
+  .nombre_nav{
+    display: none;
+  }
+  .sidenav{
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 747px) {
+.login_container{
+  text-align: center;
+  }
+  .nombre_nav{
+    display: block;
+  }
+#hamburguesita{
+  color: black;
+}
+body>nav>ul>li>a>span{
+  display: none;
+}
+  .sidenav>li{
+    float: inherit;
+    padding: 0 auto;
+    margin: 0 auto;
+  }
+#burger{
+  display: none;
+}
+.sidenav{
+  background-color: #333;
+  width: 100%;
+}
+  .sidenav>li>a{
+
+    padding: .5em;
+    margin: 0 auto;
+  }
+
+  .burger_check:checked+ul{
+	max-height: 20em;
+}
+
+.burger_check:checked+ul>li:first-of-type>label{
+	transform: rotate(90deg);
+}
+body>nav>ul>li:first-of-type>label{
+
+				font-weight: bold;
+				margin-left: .2em;
+				display: inline-block;
+				font-size: 1.5em;
+				cursor: pointer;
+
+
+				transition: transform .5s ease-in-out;
+			}
+
+			body>nav>ul>li:first-of-type{
+				text-align: left;
+				margin-left: .5em;
+			}
+
+body>nav{
+	overflow: hidden;
+}
+	body>nav>ul{
+		list-style: none;
+    display: inline-block;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		max-height: 2em;
+
+
+		transition: max-height 1s ease-in-out;
+		overflow: hidden;
+
+
+	}
+
+  input[type=text], select {
+
+      margin-left: .5em;
+
+  }
+  input[type=text]:after {
+    content: ' ';
+    display: block;
+}
+}
+.sidenav>li>a:hover{
+  background-color: #acacac;
+  color: yellow;
+}
+body>footer{
+  background-color: yellow;
+  color: black;
+}
+input[type=text]{
+  background-color: yellow;
+  color: black;
+}
+input[type=password]{
+  background-color: yellow;
+  color: black;
+}
+input[type=submit]{
+  background-color: #333;
+  color: yellow;
+}
+input[type=submit]:hover{
+  background-color: #333;
+  color: yellow;
 }
