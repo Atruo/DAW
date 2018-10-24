@@ -22,35 +22,19 @@
       <ul class="sidenav">
         <li><label for="burger"  id="hamburguesita">&equiv;</label></li>
         <li><a href="./index.html" ><span class="icon-home"></span><span class="nombre_nav"> Inicio</span></a></li>
-        <li><a href="./registro.html"class="active"><span class="icon-user-add"></span><span class="nombre_nav"> Registro</span></a> </li>
+        <li><a href="./registro.php"class="active"><span class="icon-user-add"></span><span class="nombre_nav"> Registro</span></a> </li>
         <li><a href="./buscar.html"><span class="icon-search"></span><span class="nombre_nav"> Buscar</span></a> </li>
         <li><a href="./usuario_registrado.html"><span class="icon-user"></span><span class="nombre_nav"> Menú Usuario</span></a></li>
       </ul>
   </nav>
 
+  <?php
+  if (!empty($_POST["nombre"])) {
+    $nombre = $_POST["nombre"];
+    echo "Tu nombre es: $nombre";
+  }
+  ?>
 
-  <form class="form_relleno" action="registro.html" method="post" id="form_registro">
-    <p><label>Usuario: <input type="text" name="Nombre" value=""></label></p>
-
-    <p><label>Contraseña: <input type="password" name="psw" value=""></label></p>
-
-    <p><label>Repetir Contraseña: <input type="password" name="psw2" value=""></label></p>
-
-    <p><label>Email: <input type="text" name="email" value=""></label></p>
-
-    <p><label>Sexo: <select name="cars">
-          <option value="Masculino">Masculino</option>
-          <option value="Femenino">Femenino</option>
-          <option value="ninguno">No Contestar</option>
-        </select></label></p>
-
-    <p><label>Fecha Nacimiento: <input type="date" name="nacido" value=""></label></p>
-    <p><label>Pais de Residencia: <input type="text" name="pais" value=""></label></p>
-    <p><label>Ciudad de Residencia: <input type="text" name="ciudad" value=""></label></p>
-     <p><label>Foto Perfil: <input type="file" name="foto_perfil"></label></p>
-
-    <input type="submit" name="registrarse" value="Registrarse">
-  </form>
   <footer>
     ©PI-Pictures&Images
   </footer>
