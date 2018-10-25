@@ -1,0 +1,428 @@
+
+@import url('https://fonts.googleapis.com/css?family=Krub');
+@import url('https://fonts.googleapis.com/css?family=Kodchasan');
+*{
+font-family: 'Kodchasan', monospace;
+margin: 0;
+box-sizing: border-box;
+}
+.botones{
+  background-color: yellow;
+  color: black;
+}
+
+body>footer{
+  background-color: yellow;
+  color: black;
+}
+body{
+  background-color: black;
+  color: yellow;
+  font-size: 18px;
+}
+
+h1{
+  color: yellow;
+}
+
+.sidenav{
+  background-color: white;
+}
+
+.sidenav>li{
+  background-color: yellow;
+  border: solid;
+  border-color: white;
+}
+.active{
+  background-color: white;
+  color: black;
+}
+
+
+
+.nombre_nav{
+  color: black;
+}
+
+
+
+
+/*ANTIGUO*/
+
+@import url('https://fonts.googleapis.com/css?family=Krub');
+@import url('https://fonts.googleapis.com/css?family=Kodchasan');
+.burger_check{
+  display: none;
+}
+h1.Titulo{
+
+font-family: 'Krub', monospace;
+
+}
+
+h3{
+  margin: .5em;
+}
+
+
+input[type=text], select {
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+input[type=password], select {
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+
+    background-color: #FF84C7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #BD096B;
+}
+
+
+ /*Barra de navegacion*/
+
+ ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #333;
+
+ }
+
+ li {
+     float: left;
+ }
+
+ li a {
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 21px 16px;
+     text-decoration: none;
+ }
+
+ li a:hover:not(.active) {
+     background-color: #111;
+ }
+
+ .active {
+     background-color: #363535;
+     color: yellow;
+ }
+ .active .nombre_nav{
+   color: yellow;
+ }
+ /*FIN Barra de navegacion*/
+
+  /*Fotos*/
+	section{
+		-webkit-column-count:3;
+		-moz-column-count:3;
+		column-count: 2;
+
+	}
+
+/*Formmularios grandes*/
+form.form_relleno{
+    padding:15px;
+}
+.titulo{
+  color: #3E3E3E
+}
+.titulo:link {
+    text-decoration: none;
+}
+
+.titulo:visited {
+    text-decoration: none;
+}
+
+section{
+  text-align: center;
+  width: 80%;
+  float: left;
+}
+h3{
+  text-align: center;
+}
+aside{
+  width: 20%;
+  float: right;
+
+}
+
+footer{
+  float: left;
+  width: 100%;
+}
+#bLogin{
+  text-align: center;
+}
+
+body>footer{
+	overflow: hidden;
+	background-color: #FF84C7;
+	color: #fff;
+	text-align: center;
+	margin-top: 1em;
+}
+article{
+  margin-bottom: 2em;
+}
+
+#enlaces_uReg>a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5em;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+#enlaces_uReg>a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+#enlaces_uReg>a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+#enlaces_uReg{
+  margin-top: 0.5em;
+}
+
+#info_foto{
+  text-align: center;
+  margin-top: 1em;
+}
+
+/*Tabla*/
+#tabla {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tabla td, #tabla th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tabla tr:nth-child(even){background-color: #9a9696;}
+
+#tabla tr:hover {background-color: yellow; color: black;}
+
+#tabla th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#solicitar_album{
+  text-align: justify;
+  width:800px;
+  margin:0 auto;
+}
+#form_registro{
+  width:800px;
+  margin:0 auto;
+  text-align: justify;
+}
+#form_buscar{
+  text-align:  justify;
+  width:800px;
+  margin:0 auto;
+}
+
+
+
+/* Style the input container */
+.login_container {
+  float: right;
+  margin-right: 1em;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.topnav .login_container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login_container button:hover {
+  background: #ccc;
+}
+.sidenav>ul>li:first-of-type{
+  display: none;
+}
+#hamburguesita{
+  color: white;
+  background-color: white;
+}
+.botones{
+  background-color: yellow;
+  color: black;
+}
+body>nav>ul>li:hover{
+  background-color: #acacac;
+}
+@media only screen and (max-width: 1070px) {
+  .nombre_nav{
+    display: none;
+  }
+  .sidenav{
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 747px) {
+.login_container{
+  text-align: center;
+  }
+  .nombre_nav{
+    display: block;
+  }
+#hamburguesita{
+  color: black;
+}
+body>nav>ul>li>a>span{
+  display: none;
+}
+  .sidenav>li{
+    float: inherit;
+    padding: 0 auto;
+    margin: 0 auto;
+  }
+#burger{
+  display: none;
+}
+.sidenav{
+  background-color: #333;
+  width: 100%;
+}
+  .sidenav>li>a{
+
+    padding: .5em;
+    margin: 0 auto;
+  }
+
+  .burger_check:checked+ul{
+	max-height: 20em;
+}
+
+.burger_check:checked+ul>li:first-of-type>label{
+	transform: rotate(90deg);
+}
+body>nav>ul>li:first-of-type>label{
+
+				font-weight: bold;
+				margin-left: .2em;
+				display: inline-block;
+				font-size: 1.5em;
+				cursor: pointer;
+
+
+				transition: transform .5s ease-in-out;
+			}
+
+			body>nav>ul>li:first-of-type{
+				text-align: left;
+				margin-left: .5em;
+			}
+
+body>nav{
+	overflow: hidden;
+}
+	body>nav>ul{
+		list-style: none;
+    display: inline-block;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		max-height: 2em;
+
+
+		transition: max-height 1s ease-in-out;
+		overflow: hidden;
+
+
+	}
+
+  input[type=text], select {
+
+      margin-left: .5em;
+
+  }
+  input[type=text]:after {
+    content: ' ';
+    display: block;
+}
+}
+.sidenav>li>a:hover{
+  background-color: #acacac;
+  color: yellow;
+}
+body>footer{
+  background-color: yellow;
+  color: black;
+}
+input[type=text]{
+  background-color: yellow;
+  color: black;
+}
+input[type=password]{
+  background-color: yellow;
+  color: black;
+}
+input[type=submit]{
+  background-color: #333;
+  color: yellow;
+}
+input[type=submit]:hover{
+  background-color: #333;
+  color: yellow;
+}
+*:focus {
+	outline: 0.25em solid lime;
+}
