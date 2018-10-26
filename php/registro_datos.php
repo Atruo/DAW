@@ -15,18 +15,9 @@
 </head>
 <!-- El cuerpo -->
 <body>
-  <a href="index.php" class="titulo"><h1 class="Titulo">PI - Pictures & Images</h1></a>
-
-  <nav>
-      <input type="checkbox" class="burger_check" id="burger">
-      <ul class="sidenav">
-        <li><label for="burger"  id="hamburguesita">&equiv;</label></li>
-        <li><a href="./index.php" ><span class="icon-home"></span><span class="nombre_nav"> Inicio</span></a></li>
-        <li><a href="./registro.php"class="active"><span class="icon-user-add"></span><span class="nombre_nav"> Registro</span></a> </li>
-        <li><a href="./buscar.php"><span class="icon-search"></span><span class="nombre_nav"> Buscar</span></a> </li>
-        <li><a href="./usuario_registrado.html"><span class="icon-user"></span><span class="nombre_nav"> Menú Usuario</span></a></li>
-      </ul>
-  </nav>
+  <?php
+  require_once('barra_nav.inc');
+  ?>
 
   <?php
   if (!empty($_POST["nombre"])&& !empty($_POST["email"])&& !empty($_POST["psw"]) && !empty($_POST["psw2"])&& !empty($_POST["sexo"])&& !empty($_POST["nacido"]) && !empty($_POST["pais"])) {
@@ -49,8 +40,8 @@
   }
   ?>
 
-  <footer>
-    ©PI-Pictures&Images
-  </footer>
+  <?php
+  require_once('footer.inc');
+   ?>
 </body>
 </html>

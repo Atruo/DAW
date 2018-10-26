@@ -15,18 +15,10 @@
 </head>
 <!-- El cuerpo -->
 <body>
-  <a href="index.php" class="titulo"><h1 class="Titulo">PI - Pictures & Images</h1></a>
-
-  <nav>
-      <input type="checkbox" class="burger_check" id="burger">
-      <ul class="sidenav">
-        <li><label for="burger"  id="hamburguesita">&equiv;</label></li>
-        <li><a href="./index.php"><span class="icon-home"></span><span class="nombre_nav"> Inicio</span></a></li>
-        <li><a href="./registro.php"  ><span class="icon-user-add"></span><span class="nombre_nav"> Registro</span></a> </li>
-        <li><a href="./buscar.php" class="active"><span class="icon-search"></span><span class="nombre_nav"> Buscar</span></a> </li>
-        <li><a href="./usuario_registrado.html"><span class="icon-user"></span><span class="nombre_nav"> Menú Usuario</span></a></li>
-      </ul>
-  </nav>
+  <body>
+  <?php
+  require_once('barra_nav.inc');
+  ?>
 
   <form class="form_relleno" action="res_busqueda.php" method="post" id="form_buscar">
     <label>Título: <input type="text" name="titulo" value=""></label>
@@ -37,8 +29,8 @@
     <input type="submit" name="buscar" value="Buscar" id="boton_buscar" class="botones">
   </form>
 
-  <footer>
-    ©PI-Pictures&Images
-  </footer>
+  <?php
+  require_once('footer.inc');
+   ?>
 </body>
 </html>

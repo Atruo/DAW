@@ -15,17 +15,9 @@
 </head>
 <!-- El cuerpo -->
 <body>
-  <a href="index.php" class="titulo"><h1 class="Titulo">PI - Pictures & Images</h1></a>
-  <nav>
-      <input type="checkbox" class="burger_check" id="burger">
-      <ul class="sidenav">
-        <li><label for="burger"  id="hamburguesita">&equiv;</label></li>
-        <li><a href="./index.php" class="active"><span class="icon-home"></span><span class="nombre_nav"> Inicio</span></a></li>
-        <li><a href="./registro.php"><span class="icon-user-add"></span><span class="nombre_nav"> Registro</span></a> </li>
-        <li><a href="./buscar.php"><span class="icon-search"></span><span class="nombre_nav"> Buscar</span></a> </li>
-        <li><a href="./usuario_registrado.html"><span class="icon-user"></span><span class="nombre_nav"> Menú Usuario</span></a></li>
-      </ul>
-  </nav>
+  <?php
+  require_once('barra_nav.inc');
+  ?>
   <?php
   $titulo = $_POST["titulo"];
   $fecha = $_POST["fecha"];
@@ -35,26 +27,26 @@
    ?>
    <h3>Resultados de tu búsqueda:</h3>
 
-    <section id="fotos_busqueda">
-    <article>
-      <a href="./foto.html">
-        <img src="foto.jpg" alt="foto" style="width:150px;">
-      </a>
-      <h4>Título</h4>
-      <p>Fecha</p>
-      <p>País</p>
-    </article>
-    <article>
-      <a href="./foto.html">
-        <img src="foto.jpg" alt="foto" style="width:150px;">
-      </a>
-      <h4>Título</h4>
-      <p>Fecha</p>
-      <p>País</p>
-    </article>
+   <section id="ultimas_fotos">
+       <article class="image fit">
+         <a href="./foto.php?num=1">
+           <img src="foto.jpg" alt="foto" style="width:150px;">
+         </a>
+         <h4>Título</h4>
+         <p>Fecha</p>
+         <p>País</p>
+       </article>
+       <article>
+         <a href="./foto.php?num=2">
+           <img src="foto2.jpg" alt="foto" style=" height:100px;">
+         </a>
+         <h4>Título</h4>
+         <p>Fecha</p>
+         <p>País</p>
+       </article>
   </section>
-  <footer>
-    ©PI-Pictures&Images
-  </footer>
+  <?php
+  require_once('footer.inc');
+   ?>
 </body>
 </html>
