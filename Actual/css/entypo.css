@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'entypo';
-  src: url('../font/entypo.eot?94834165');
-  src: url('../font/entypo.eot?94834165#iefix') format('embedded-opentype'),
-       url('../font/entypo.woff2?94834165') format('woff2'),
-       url('../font/entypo.woff?94834165') format('woff'),
-       url('../font/entypo.ttf?94834165') format('truetype'),
-       url('../font/entypo.svg?94834165#entypo') format('svg');
+  src: url('../font/entypo.eot?11424755');
+  src: url('../font/entypo.eot?11424755#iefix') format('embedded-opentype'),
+       url('../font/entypo.woff2?11424755') format('woff2'),
+       url('../font/entypo.woff?11424755') format('woff'),
+       url('../font/entypo.ttf?11424755') format('truetype'),
+       url('../font/entypo.svg?11424755#entypo') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'entypo';
-    src: url('../font/entypo.svg?94834165#entypo') format('svg');
+    src: url('../font/entypo.svg?11424755#entypo') format('svg');
   }
 }
 */
@@ -59,3 +59,4 @@
 .icon-user-add:before { content: '\e801'; } /* '' */
 .icon-user:before { content: '\e802'; } /* '' */
 .icon-search:before { content: '\e803'; } /* '' */
+.icon-logout:before { content: '\e804'; } /* '' */

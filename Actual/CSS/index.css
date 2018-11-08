@@ -131,6 +131,13 @@ footer{
 #bLogin{
   text-align: center;
 }
+#modal_login{
+  color: red;
+}
+
+#recordar_text{
+  color: white;
+}
 
 body>footer{
 	overflow: hidden;
