@@ -10,7 +10,20 @@ box-sizing: border-box;
   background-color: yellow;
   color: black;
 }
+#precio_album{
+  margin: 2em;
+  text-align: center;
+}
+#echoFecha{
+  text-align: center;
+  color: yellow;
+  border-style: solid;
+  border-color: #333;
 
+  width: 30%;
+  margin: 0 auto;
+
+}
 body>footer{
   background-color: yellow;
   color: black;

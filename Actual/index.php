@@ -6,6 +6,7 @@ require_once('header.inc');
 
 <?php
 require_once('barra_nav.inc');
+require_once('fecha.inc');
 
 ?>
 
@@ -13,6 +14,7 @@ require_once('barra_nav.inc');
   <h3>Últimas Fotos</h3>
   <section id="ultimas_fotos">
       <article class="image fit">
+
         <a href="./foto.php?num=1&titulo=Prueba&fecha=Fecha&pais=España">
           <img src="foto.jpg" alt="foto" style="width:150px;">
         </a>

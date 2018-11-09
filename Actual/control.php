@@ -12,6 +12,7 @@
    $host = $_SERVER['HTTP_HOST'];
    $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
    $extra = 'index.php';
+   $date = date('d/m/Y H:i:s');
    session_start();
    $_SESSION["autenticado"]= "SI";
    if (isset($_POST['marcado'])) {
@@ -20,6 +21,11 @@
         setcookie('recuerda_psw', $galleta_psw, time() + 90 * 24 * 60 * 60);
       }else{// Caduca en 90 dias
         setcookie('recuerda_psw', $galleta_psw, time() + 90 * 24 * 60 * 60);
+      }
+      if(isset($_COOKIE['fecha'])){// Caduca en 90 dias
+        setcookie('fecha', $date, time() + 90 * 24 * 60 * 60);
+      }else{// Caduca en 90 dias
+        setcookie('fecha', $date, time() + 90 * 24 * 60 * 60);
       }
    }
    $galleta_usu = $_POST['usuario'];

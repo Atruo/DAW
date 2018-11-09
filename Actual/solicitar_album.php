@@ -1,5 +1,6 @@
 <?php
 require_once('header.inc');
+require_once('actualizarfecha.inc');
 ?>
 <!-- El cuerpo -->
 <body>

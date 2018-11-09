@@ -1,5 +1,6 @@
 <?php
 require_once('header.inc');
+require_once('actualizarfecha.inc');
 ?>
 <!-- El cuerpo -->
 <body>
@@ -18,13 +19,13 @@ require_once('header.inc');
     $pais = $_POST["pais"];
     $ciudad = $_POST["ciudad"];
     if ($psw != $psw2) {
-      echo "Las contraseñas no coinciden. <a href='./registro.php'>Arréglalo</a>.";
+      echo "<p class = 'modal_registro'>Las contraseñas no coinciden. <a href='./registro.php'>Arréglalo</a>.</p>";
     }else {
-      echo "Tu nombre es: $nombre , con email: $email , sexo: $sexo , nacido el $nacido en $ciudad - $pais";
+      echo "<div id='datos_registro'><p>Tu nombre es: $nombre </p> <p> Tu email: $email </p> <p> Tu sexo: $sexo </p> <p>Nacido el $nacido en $ciudad - $pais </p></div>";
     }
 
   }else {
-    echo "Has dejado algún dato vacio, vuelve atrás y rellénalos todos";
+    echo "<p class = 'modal_registro'>Has dejado algún dato vacio, vuelve atrás y rellénalos todos</p>";
   }
   ?>
 

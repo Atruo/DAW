@@ -1,5 +1,6 @@
 <?php
 require_once('header.inc');
+require_once('actualizarfecha.inc');
 ?>
 <!-- El cuerpo -->
 <body>
@@ -22,7 +23,7 @@ require_once('header.inc');
     $precio = $precio +0.1;
   }
   $precio = $precio * $copias;
-  echo "Solicitud registrada con éxito. Precio de la solicitud: $precio €";
+  echo "<p id ='precio_album'>Solicitud registrada con éxito. Precio de la solicitud:<span id='precio'> $precio € </span></p>";
   ?>
 
   <?php

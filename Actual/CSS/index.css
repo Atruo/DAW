@@ -18,6 +18,35 @@ h3{
   margin: .5em;
 }
 
+#echoFecha{
+  text-align: center;
+  color: #f55baf;
+  border-style: solid;
+  border-color: #333;
+
+  width: 30%;
+  margin: 0 auto;
+
+}
+.modal_registro{
+  margin: 2em;
+  border-style: dotted;
+  border-color: red;
+  padding: 1em;
+  text-align: center;
+  width: 40%;
+}
+#datos_registro{
+  text-align: center;
+  margin: 0 auto;
+}
+#precio_album{
+  margin: 2em;
+  text-align: center;
+}
+#precio{
+   font-weight: bold;
+}
 
 input[type=text], select {
 

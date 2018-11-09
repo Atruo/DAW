@@ -1,5 +1,6 @@
 <?php
 require_once('header.inc');
+require_once('actualizarfecha.inc');
 ?>
 <!-- El cuerpo -->
 <body>
@@ -22,12 +23,12 @@ require_once('header.inc');
       <a href="./solicitar_album.php">Imprimir Álbum</a>
     </div>';
 
-    echo
-    '<?php
-    require_once("footer.inc");
-     ?>
-  </body>
-  </html>
-';
+
+
   }
+
+  require_once("footer.inc");
+echo "</body>
+</html>
+";
   ?>
