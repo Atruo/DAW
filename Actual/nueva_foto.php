@@ -10,22 +10,17 @@ require_once('actualizarfecha.inc');
 
 
   <form class="form_relleno" action="registro_datos.php" method="post" id="form_registro">
-    <p><label>Usuario: <input type="text" name="nombre" value=""></label></p>
+    <p><label>Título: <input type="text" name="titulo" value=""></label></p>
 
-    <p><label>Contraseña: <input type="password" name="psw" value=""></label></p>
+    <p><label>Descripción: <input type="text" name="descripcion" value=""></label></p>
 
-    <p><label>Repetir Contraseña: <input type="password" name="psw2" value=""></label></p>
+
 
     <p><label>Email: <input type="text" name="email" value=""></label></p>
 
-    <p><label>Sexo: <select name="sexo">
-          <option value="Masculino">Masculino</option>
-          <option value="Femenino">Femenino</option>
-          <option value="ninguno">No Contestar</option>
-        </select></label></p>
 
-    <p><label>Fecha Nacimiento: <input type="date" name="nacido" value=""></label></p>
-    <p><label>Pais de Residencia: <select name="pais">
+    <p><label>Fecha: <input type="date" name="fecha" value=""></label></p>
+    <p><label>Pais: <select name="pais">
       <?php
           $mysqli = @new mysqli(
                   'localhost',   // El servidor
@@ -49,13 +44,25 @@ require_once('actualizarfecha.inc');
              while($fila = $resultado->fetch_assoc()) {
                echo '<option value="'.$fila['IdPais'].'">'.$fila['NomPais'].'</option>';
              }
+             echo "  </select></label></p>";
+             echo '  <p><label>Album: <select name="album">';
+              $sentencia = 'SELECT * FROM albumes';
+              if(!($resultado = $mysqli->query($sentencia))) {
+                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+                echo '</p>';
+                exit;
+              }
+                 while($fila = $resultado->fetch_assoc()) {
+                   echo '<option value="'.$fila['IdAlbum'].'">'.$fila['Titulo'].'</option>';
+                 }
+              echo "  </select></label></p>";
 
 
        ?>
 
-        </select></label></p>
-    <p><label>Ciudad de Residencia: <input type="text" name="ciudad" value=""></label></p>
-     <p><label>Foto Perfil: <input type="file" name="foto_perfil"></label></p>
+
+
+     <p><label>Foto: <input type="file" name="foto"></label></p>
 
     <input type="submit" name="registrarse" value="Registrarse">
   </form>

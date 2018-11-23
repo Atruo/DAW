@@ -9,7 +9,7 @@ require_once('actualizarfecha.inc');
   ?>
 
 
-  <form class="form_relleno" action="crear_album.php" method="post" id="form_registro">
+  <form class="form_relleno" action="registro_datos.php" method="post" id="form_registro">
     <p><label>Titulo: <input type="text" name="titulo" value=""></label></p>
 
     <p>  <label for="desc">Descripción: </label><textarea name="name" rows="8" cols="80" id="desc"></textarea></p>

@@ -13,31 +13,48 @@ require_once('actualizarfecha.inc');
   if ($_SESSION["autenticado"] != "SI") {
     echo '<h3>Debes iniciar sesión para acceder a esta página</h3>';
   }else {
+    $titulo = $_GET["titulo"];
+    $fecha = $_GET["fecha"];
+    $pais = $_GET["pais"];
+    $id = $_GET["id"];
+    $url ='';
 
-    echo '
-      <div id="info_foto">
-        <img src=';
-         if(!empty($_GET["num"])){
-           if ($_GET["num"]%2==0) {
-           echo "foto2.jpg";
-          }else {
-            echo "foto.jpg";
-          }
-        }
+    $mysqli = @new mysqli(
+            'localhost',   // El servidor
+            'root',    // El usuario
+            '',          // La contraseña
+            'pibd'); // La base de datos
 
-        echo ' alt="foto" style="width:200px;">';
+    if($mysqli->connect_errno) {
+      echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
+      echo '</p>';
+      exit;
+    }
 
-        $titulo = $_GET["titulo"];
-        $fecha = $_GET["fecha"];
-        $pais = $_GET["pais"];
-        echo "<p>$titulo</p>
-        <p>$fecha</p>
-        <p>$pais</p>
-        <p>Álbum</p>
-        <p>Autor</p>";
+    // Ejecuta una sentencia SQL
+    $sentencia = 'SELECT IdFoto,Titulo, Descripcion, fotos.FRegistro, Fichero, Alternativo, fotos.Pais, NomUsuario, Album  FROM fotos, usuarios where IdUsuario = fotos.Usuario';
+    if(!($resultado = $mysqli->query($sentencia))) {
+      echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+      echo '</p>';
+      exit;
+    }
+     while($fila = $resultado->fetch_assoc()) {
+       if ($fila['IdFoto'] == $id) {
+         echo '<div id="info_foto">
+             <img src='.$fila['Fichero'].'';
+             echo ' alt="'.$fila['Alternativo'].'" style="width:200px;">';
+             echo '<p>'.$titulo.'</p>
+             <p>'.$fecha.'</p>
+             <p>'.$pais.'</p>
+             <p>'.$fila['Album'].'</p>
+             <p>'.$fila['NomUsuario'].'</p>';
 
 
-      echo "</div>";
+           echo "</div>";
+           break;
+       }
+     }
+
 
 
 

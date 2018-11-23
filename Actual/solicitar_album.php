@@ -65,25 +65,57 @@ require_once('actualizarfecha.inc');
 
 <p><label>País: <select id="busqueda_pais">
 
-<option value='españa'>España</option>
-<option value='francia'>Francia</option>
-<option value='portugal'>Portugal</option>
+  <?php
+      $mysqli = @new mysqli(
+              'localhost',   // El servidor
+              'root',    // El usuario
+              '',          // La contraseña
+              'pibd'); // La base de datos
+
+      if($mysqli->connect_errno) {
+        echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
+        echo '</p>';
+        exit;
+      }
+
+      // Ejecuta una sentencia SQL
+      $sentencia = 'SELECT * FROM paises';
+      if(!($resultado = $mysqli->query($sentencia))) {
+        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+        echo '</p>';
+        exit;
+      }
+         while($fila = $resultado->fetch_assoc()) {
+           echo '<option value="'.$fila['IdPais'].'">'.$fila['NomPais'].'</option>';
+         }
+
+         echo "</select></label></p>";
+         echo '<p><label>Color: <input type="color"></label></p>
+
+           <p><label>Nº de Copias(*): <input type="number" min="1" name="copias" value="1" required></label></p>';
+           echo '<label>Resolución:  <input type="range" value="150" name="resolucion" id="resolucion"  min="150" max="900" step="150" onchange="document.getElementById("outresolucion").innerHTML=this.value"></label>
+
+             <span id="outresolucion">150</span>';
+             echo '<p><label>Álbum(*): <select  name="album" required>';
+             $sentencia = 'SELECT * FROM albumes';
+             if(!($resultado = $mysqli->query($sentencia))) {
+               echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+               echo '</p>';
+               exit;
+             }
+                while($fila = $resultado->fetch_assoc()) {
+                  echo '<option value="'.$fila['IdAlbum'].'">'.$fila['Titulo'].'</option>';
+                }
+
+   ?>
 
 
-</select></label></p>
 
 
-<p><label>Color: <input type="color"></label></p>
 
-  <p><label>Nº de Copias(*): <input type="number" min="1" name="copias" value="1" required></label></p>
 
-<label>Resolución:  <input type="range" value="150" name="resolucion" id="resolucion"  min="150" max="900" step="150" onchange="document.getElementById('outresolucion').innerHTML=this.value"></label>
 
-  <span id="outresolucion">150</span>
-  <p><label>Álbum(*): <select  name="album" required>
-          <option value="">Album1</option>
-          <option value="2">Album2</option>
-          <option value="3">Album3</option>
+
 
   </select></label></p>
 

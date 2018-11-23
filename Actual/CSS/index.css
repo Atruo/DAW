@@ -4,6 +4,15 @@
 .burger_check{
   display: none;
 }
+#albumes{
+  text-align: center;
+}
+#lista_estilos{
+  text-align: center;
+}
+#lista_estilos>h4>span{
+  text-decoration: underline;
+}
 h1.Titulo{
 
 font-family: 'Krub', monospace;

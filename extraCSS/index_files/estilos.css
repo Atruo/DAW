@@ -1,38 +1,200 @@
 /*
-Simple
-Jose Vald�s
+Naranja
+Laura Sirvent Collado
+mailto: laurasirco@ arroba @gmail.com
 */
 
 
-
-/**
-    GENERAL
- */
-html {
-    height: 100%;
-    box-sizing: border-box;
-    color: #434343;
+html{
+    cursor: url(cursor.cur),auto;
 }
+body{
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
+	font-family: 'Open Sans', sans-serif;
+	background-color: #FEFEFE;
+	color: #666666;
+	margin-left: 325px;
+	margin-right: 50px;
+	margin-top: 100px;
+	font-size: 14px;
 
-body {
-    position: relative;
-    margin: 0;
-    min-height: 100%;
-    font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 
+a{
+
+	text-decoration: none;
+
+}
+a:link, a:visited {
+    color: blue;
+}
+
+a:hover{
+  color: #305fce;
+  cursor: url(select.cur),auto;
+}
+
+ul{
+
+	list-style: none;
+}
+
+dd{
+	margin-left: 0px;
+	margin-bottom: 15px;
+}
 
 
-/*MIO MIO MIO MIO MIO*/
+#enlacesintra{
 
-#apartados>div>h3{
-  border-style: solid;
+	position: fixed;
+	float: left;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	background-color: #EFEFEF;
+	padding-top: 250px;
 
+}
+
+#enlacesintra ul{
+
+	margin-left: 0;
+	padding-left: 0px;
+	list-style-type: none;
+}
+
+#enlacesintra h3{
+
+	margin-top: 40px;
+	padding-left: 15px;
+	text-transform: uppercase;
+	color: #4997b5;
+}
+
+#enlacesintra li{
+
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: 12px;
+
+	background-color: #c5c5c5;
+	border-bottom: 3px solid #a4a4a4;
+}
+
+#enlacesintra li:hover{
+
+	background-color: #E86C46;
+	border-bottom: 3px solid #a4a4a4;
+	color: white;
+
+}
+#apartados{
+ border-bottom-style: dotted;
+}
+
+#enlaces{
+
+	margin-top: 0px;
+
+
+}
+#enlacesversiones{
+
+}
+
+#enlaces div{
+
+	display: inline-block;
+	height: 100px;
+	margin-right: 100px;
+	padding-top: 50px;
+
+}
+
+#enlaces ul, #enlacesversiones ul{
+
+	padding-left: 0px;
+}
+
+#enlacesversiones{
+	margin-top: 80px;
+
+}
+
+#enlacesversiones li{
+
+	display: inline;
+	padding-right: 20px;
+  text-align: center;
+}
+
+#enlacesintra a.a1, #enlacesintra a.a2, #enlacesintra a.a3, #enlacesintra a.a4{
+
+	color: #333333;
+}
+
+#extraDiv1{
+
+	position: fixed;
+	float: left;
+	top: 25px;
+	left: 40px;
+	background-image: url("logo.png");
+  background-repeat: no-repeat;
+	width: 195px;
+	height: 239px;
+	margin:	-5px;
+
+}
+
+#contenedor{
+
+	
+
+}
+
+#enlaces{
+
+	bottom: 0px;
+}
+p{
+	text-align: justify;
+}
+
+h3{
+
+	color:#4997b5;
+	text-transform: uppercase;
+}
+
+h1{
+	font-family: 'Bree Serif', serif;
+	/*color: #4997b5;*/
+	color: #333333;
+	font-size: 60px;
+}
+
+#comentario{
+
+	padding: 10px;
+	padding-left: 0px;
+
+	top: 0;
+	font-size: 12px;
+	text-align: justify;
+  border-style: dotted;
+  border-color: red;
+}
+
+#titulo{
+  border-radius: .5em;
+  background-color: rgb(236, 111, 31);
+  text-align: center;
+  top: 5px;
+}
+#titulo>h2{
+  color: white;
+  padding: .5em;
 }

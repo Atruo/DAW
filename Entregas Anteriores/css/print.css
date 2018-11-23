@@ -1,9 +1,26 @@
 
 @import url('https://fonts.googleapis.com/css?family=Krub');
 @import url('https://fonts.googleapis.com/css?family=Kodchasan');
-.burger_check{
+
+body{
+  font-size: 12px;
+   font-weight: normal;
+
+}
+ul{
   display: none;
 }
+.sidenav{
+  display: none;
+}
+a:after {
+	content:" <" attr(href) ">";
+
+}
+
+
+
+/*Esto es lo normal*/
 h1.Titulo{
 
 font-family: 'Krub', monospace;
@@ -11,46 +28,13 @@ font-family: 'Krub', monospace;
 }
 *{
 font-family: 'Kodchasan', monospace;
-margin: 0;
-box-sizing: border-box;
-}
-h3{
-  margin: .5em;
 }
 
-#echoFecha{
-  text-align: center;
-  color: #f55baf;
-  border-style: solid;
-  border-color: #333;
 
-  width: 30%;
-  margin: 0 auto;
-
-}
-.modal_registro{
-  margin: 2em;
-  border-style: dotted;
-  border-color: red;
-  padding: 1em;
-  text-align: center;
-  width: 40%;
-}
-#datos_registro{
-  text-align: center;
-  margin: 0 auto;
-}
-#precio_album{
-  margin: 2em;
-  text-align: center;
-}
-#precio{
-   font-weight: bold;
-}
 
 input[type=text], select {
 
-    padding: 12px 20px;
+    padding: 6px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -159,13 +143,6 @@ footer{
 }
 #bLogin{
   text-align: center;
-}
-#modal_login{
-  color: red;
-}
-
-#recordar_text{
-  color: white;
 }
 
 body>footer{
@@ -278,101 +255,4 @@ article{
 
 .topnav .login_container button:hover {
   background: #ccc;
-}
-.sidenav>ul>li:first-of-type{
-  display: none;
-}
-#hamburguesita{
-  color: #333;
-}
-@media only screen and (max-width: 1040px) {
-  .nombre_nav{
-    display: none;
-  }
-  .sidenav{
-    margin: 0 auto;
-  }
-}
-@media only screen and (max-width: 747px) {
-.login_container{
-  text-align: center;
-  }
-  .nombre_nav{
-    display: block;
-  }
-#hamburguesita{
-  color: white;
-}
-body>nav>ul>li>a>span{
-  display: none;
-}
-  .sidenav>li{
-    float: inherit;
-    padding: 0 auto;
-    margin: 0 auto;
-  }
-#burger{
-  display: none;
-}
-.sidenav{
-  background-color: #333;
-  width: 100%;
-}
-  .sidenav>li>a{
-
-    padding: .5em;
-    margin: 0 auto;
-  }
-
-  .burger_check:checked+ul{
-	max-height: 20em;
-}
-
-.burger_check:checked+ul>li:first-of-type>label{
-	transform: rotate(90deg);
-}
-body>nav>ul>li:first-of-type>label{
-
-				font-weight: bold;
-				margin-left: .2em;
-				display: inline-block;
-				font-size: 1.5em;
-				cursor: pointer;
-
-
-				transition: transform .5s ease-in-out;
-			}
-
-			body>nav>ul>li:first-of-type{
-				text-align: left;
-				margin-left: .5em;
-			}
-
-body>nav{
-	overflow: hidden;
-}
-	body>nav>ul{
-		list-style: none;
-    display: inline-block;
-		padding: 0;
-		margin: 0;
-		text-align: center;
-		max-height: 2em;
-
-
-		transition: max-height 1s ease-in-out;
-		overflow: hidden;
-
-
-	}
-
-  input[type=text], select {
-
-      margin-left: .5em;
-
-  }
-  input[type=text]:after {
-    content: ' ';
-    display: block;
-}
 }

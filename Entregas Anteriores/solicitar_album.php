@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<!-- La cabecera -->
-<head>
-<meta charset="utf-8" />
-<meta name="generator" content="Bloc de notas" />
-<meta name="author" content="Sergio Luján Mora" />
-<meta name="keywords" content="HTML5, web" />
-<meta name="description" content="Plantilla base de una página creada con HTML5" />
-<link rel="stylesheet" href="CSS/index.css">
-<title>Plantilla base de HTML5</title>
-</head>
+<?php
+require_once('header.inc');
+require_once('actualizarfecha.inc');
+?>
 <!-- El cuerpo -->
 <body>
-  <a href="index.html" class="titulo"><h1 class="Titulo">PI - Pictures & Images</h1></a>
-<ul class="sidenav">
-  <li><a href="./index.html">Inicio</a></li>
-  <li><a href="./registro.html">Registro</a> </li>
-  <li><a href="./buscar.html">Buscar</a> </li>
-  <li><a href="./usuario_registrado.html" class="active">Menú Usuario</a></li>
-</ul>
+  <?php
+  require_once('barra_nav.inc');
+  ?>
   <div >
     <h3>Descripción de funcionamineto</h3>
     <table id="tabla">
@@ -50,7 +38,7 @@
   </div>
 <br>
 
-<form id="solicitar_album" action="solicitar_album.html" method="post">
+<form id="solicitar_album" action="solicitar_album_resultado.php" method="post">
 
 <p>  <label>Nombre Completo(*): <input type="text" name="nombre" value="" maxlength="200" required></label></p>
 
@@ -106,13 +94,12 @@
         <option value="2">Color</option>
       </select></label></p>
 
-<input type="submit" name="solicitar" value="Solicitar">
+<input type="submit" name="solicitar" value="Solicitar" class="botones">
 </form>
 
 
-
-  <footer>
-    ©PI-Pictures&Images
-  </footer>
+<?php
+require_once('footer.inc');
+ ?>
 </body>
 </html>

@@ -16,11 +16,9 @@ require_once('actualizarfecha.inc');
     $datos = $_COOKIE['recuerda_usu'];
     echo "<h4 style = 'text-align: center;'>Bienvenido $datos</h4>";
     echo '<div id="enlaces_uReg">
-      <a href="./modificar.php">Modificar Datos</a>
-      <a href="./configurar.php">Configurar</a>
+      <a href="#">Modificar Datos</a>
       <a href="#">Darse de Baja</a>
-      <a href="./nueva_foto.php">Añade Foto</a>
-      <a href="./visualizar.php">Visualizar Álbumes</a>
+      <a href="#">Visualizar Álbumes</a>
       <a href="./crear_album.php">Crear Álbum</a>
       <a href="./solicitar_album.php">Imprimir Álbum</a>
     </div>';

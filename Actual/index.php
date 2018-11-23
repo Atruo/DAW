@@ -8,61 +8,56 @@ require_once('header.inc');
 require_once('barra_nav.inc');
 require_once('fecha.inc');
 
+ // Conecta con el servidor de MySQL
+ $mysqli = @new mysqli(
+         'localhost',   // El servidor
+         'root',    // El usuario
+         '',          // La contraseña
+         'pibd'); // La base de datos
+
+ if($mysqli->connect_errno) {
+   echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
+   echo '</p>';
+   exit;
+ }
+
+ // Ejecuta una sentencia SQL
+ $sentencia = 'SELECT IdFoto, Titulo, FRegistro, NomPais, Fichero, Alternativo  FROM fotos, paises where Pais = IdPais';
+ if(!($resultado = $mysqli->query($sentencia))) {
+   echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+   echo '</p>';
+   exit;
+ }
+ echo '<h3>Últimas Fotos</h3><section id="ultimas_fotos">';
+ $control = 1;
+ $cont = 1;
+   while($fila = $resultado->fetch_assoc()) {
+     if ($control == 1) {
+       echo '<article> <a href="./foto.php?num='.$cont.'&id='.$fila['IdFoto'].'&titulo='.$fila['Titulo'].'&fecha='.$fila['FRegistro'].'&pais='.$fila['NomPais'].'">';
+       echo '<img src= "'.$fila['Fichero'].'" alt="'.$fila['Alternativo'].'" style="width:150px;">';
+       echo "</a>";
+       echo '<h4>'.$fila['Titulo'].'</h4>';
+       echo '<p>'.$fila['FRegistro'].'</p>';
+       echo '<p>'.$fila['NomPais'].'</p>';
+       echo "</article>";
+       $control = 2;
+     }else {
+       echo '<article> <a href="./foto.php?num='.$cont.'&id='.$fila['IdFoto'].'&titulo='.$fila['Titulo'].'&fecha='.$fila['FRegistro'].'&pais='.$fila['NomPais'].'">';
+       echo '<img src= "'.$fila['Fichero'].'" alt="'.$fila['Alternativo'].'" style="height:100px;">';
+       echo "</a>";
+       echo '<h4>'.$fila['Titulo'].'</h4>';
+       echo '<p>'.$fila['FRegistro'].'</p>';
+       echo '<p>'.$fila['NomPais'].'</p>';
+       echo "</article>";
+       $control = 1;
+     }
+     $cont = $cont +1;
+
+  }
+  echo "</section>";
 ?>
 
 
-  <h3>Últimas Fotos</h3>
-  <section id="ultimas_fotos">
-      <article class="image fit">
-
-        <a href="./foto.php?num=1&titulo=Prueba&fecha=Fecha&pais=España">
-          <img src="foto.jpg" alt="foto" style="width:150px;">
-        </a>
-        <h4>Prueba</h4>
-        <p>Fecha</p>
-        <p>España</p>
-      </article>
-      <article>
-        <a href="./foto.php?num=2&titulo=Prueba&fecha=Fecha&pais=España">
-          <img src="foto2.jpg" alt="foto" style=" height:100px;">
-        </a>
-        <h4>Prueba</h4>
-        <p>Fecha</p>
-        <p>España</p>
-      </article>
-      <article>
-        <a href="./foto.php?num=3&titulo=Prueba&fecha=Fecha&pais=España">
-          <img src="foto.jpg" alt="foto" style="width:150px;">
-        </a>
-        <h4>Prueba</h4>
-        <p>Fecha</p>
-        <p>España</p>
-      </article>
-      <article>
-        <a href="./foto.php?num=4&titulo=Prueba&fecha=Fecha&pais=España">
-          <img src="foto2.jpg" alt="foto" style=" height:100px;">
-        </a>
-        <h4>Prueba</h4>
-        <p>Fecha</p>
-        <p>España</p>
-      </article>
-      <article>
-        <a href="./foto.php?num=5&titulo=Prueba&fecha=Fecha&pais=España">
-          <img src="foto.jpg" alt="foto" style="width:150px;">
-        </a>
-        <h4>Prueba</h4>
-        <p>Fecha</p>
-        <p>España</p>
-      </article>
-      <article>
-        <a href="./foto.php?num=6&titulo=Prueba&fecha=Fecha&pais=España">
-          <img src="foto2.jpg" alt="foto" style=" height:100px;">
-        </a>
-        <h4>Prueba</h4>
-        <p>Fecha</p>
-        <p>España</p>
-      </article>
-  </section>
 <?php
 require_once('footer.inc');
  ?>

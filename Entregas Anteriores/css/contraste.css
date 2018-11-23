@@ -1,6 +1,70 @@
 
 @import url('https://fonts.googleapis.com/css?family=Krub');
 @import url('https://fonts.googleapis.com/css?family=Kodchasan');
+*{
+font-family: 'Kodchasan', monospace;
+margin: 0;
+box-sizing: border-box;
+}
+.botones{
+  background-color: yellow;
+  color: black;
+}
+#precio_album{
+  margin: 2em;
+  text-align: center;
+}
+#echoFecha{
+  text-align: center;
+  color: yellow;
+  border-style: solid;
+  border-color: #333;
+
+  width: 30%;
+  margin: 0 auto;
+
+}
+body>footer{
+  background-color: yellow;
+  color: black;
+}
+body{
+  background-color: black;
+  color: yellow;
+  font-size: 18px;
+}
+
+h1{
+  color: yellow;
+}
+
+.sidenav{
+  background-color: white;
+}
+
+.sidenav>li{
+  background-color: yellow;
+  border: solid;
+  border-color: white;
+}
+.active{
+  background-color: white;
+  color: black;
+}
+
+
+
+.nombre_nav{
+  color: black;
+}
+
+
+
+
+/*ANTIGUO*/
+
+@import url('https://fonts.googleapis.com/css?family=Krub');
+@import url('https://fonts.googleapis.com/css?family=Kodchasan');
 .burger_check{
   display: none;
 }
@@ -9,44 +73,11 @@ h1.Titulo{
 font-family: 'Krub', monospace;
 
 }
-*{
-font-family: 'Kodchasan', monospace;
-margin: 0;
-box-sizing: border-box;
-}
+
 h3{
   margin: .5em;
 }
 
-#echoFecha{
-  text-align: center;
-  color: #f55baf;
-  border-style: solid;
-  border-color: #333;
-
-  width: 30%;
-  margin: 0 auto;
-
-}
-.modal_registro{
-  margin: 2em;
-  border-style: dotted;
-  border-color: red;
-  padding: 1em;
-  text-align: center;
-  width: 40%;
-}
-#datos_registro{
-  text-align: center;
-  margin: 0 auto;
-}
-#precio_album{
-  margin: 2em;
-  text-align: center;
-}
-#precio{
-   font-weight: bold;
-}
 
 input[type=text], select {
 
@@ -112,7 +143,11 @@ input[type=submit]:hover {
  }
 
  .active {
-     background-color: #FF84C7;
+     background-color: #363535;
+     color: yellow;
+ }
+ .active .nombre_nav{
+   color: yellow;
  }
  /*FIN Barra de navegacion*/
 
@@ -159,13 +194,6 @@ footer{
 }
 #bLogin{
   text-align: center;
-}
-#modal_login{
-  color: red;
-}
-
-#recordar_text{
-  color: white;
 }
 
 body>footer{
@@ -219,9 +247,9 @@ article{
     padding: 8px;
 }
 
-#tabla tr:nth-child(even){background-color: #f2f2f2;}
+#tabla tr:nth-child(even){background-color: #9a9696;}
 
-#tabla tr:hover {background-color: #ddd;}
+#tabla tr:hover {background-color: yellow; color: black;}
 
 #tabla th {
     padding-top: 12px;
@@ -283,9 +311,17 @@ article{
   display: none;
 }
 #hamburguesita{
-  color: #333;
+  color: white;
+  background-color: white;
 }
-@media only screen and (max-width: 1040px) {
+.botones{
+  background-color: yellow;
+  color: black;
+}
+body>nav>ul>li:hover{
+  background-color: #acacac;
+}
+@media only screen and (max-width: 1070px) {
   .nombre_nav{
     display: none;
   }
@@ -301,7 +337,7 @@ article{
     display: block;
   }
 #hamburguesita{
-  color: white;
+  color: black;
 }
 body>nav>ul>li>a>span{
   display: none;
@@ -375,4 +411,31 @@ body>nav{
     content: ' ';
     display: block;
 }
+}
+.sidenav>li>a:hover{
+  background-color: #acacac;
+  color: yellow;
+}
+body>footer{
+  background-color: yellow;
+  color: black;
+}
+input[type=text]{
+  background-color: yellow;
+  color: black;
+}
+input[type=password]{
+  background-color: yellow;
+  color: black;
+}
+input[type=submit]{
+  background-color: #333;
+  color: yellow;
+}
+input[type=submit]:hover{
+  background-color: #333;
+  color: yellow;
+}
+*:focus {
+	outline: 0.25em solid lime;
 }

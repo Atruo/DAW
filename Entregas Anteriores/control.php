@@ -1,44 +1,13 @@
 <?php
-
- $mysqli = @new mysqli(
-         'localhost',   // El servidor
-         'root',    // El usuario
-         '',          // La contraseña
-         'pibd'); // La base de datos
-
- if($mysqli->connect_errno) {
-   echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
-   echo '</p>';
-   exit;
- }
-
- // Ejecuta una sentencia SQL
-
- $sentencia = 'SELECT NomUsuario, Clave, Estilo  FROM usuarios';
- if(!($resultado = $mysqli->query($sentencia))) {
-   echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
-   echo '</p>';
-   exit;
- }
-
- $usuario = $_POST['usuario'];
- $clave = $_POST['psw'];
-   while ($fila = $resultado->fetch_assoc()) {
-     if ($fila['NomUsuario'] == $usuario && $fila['Clave'] == $clave) {
-       $control = true;
-       break;
-     }
+ /* Redirecciona a una página diferente que se encuentra en el directorio actual */
+ $datos = array('usuario' => '123' ,'usuario2' => '123' ,'usuario3' => '123' );
+ $control = false;
+ foreach ($datos as $usuario=> $psw) {
+   if ($usuario == $_POST['usuario'] && $psw == $_POST['psw']) {
+     $control = true;
+     break;
    }
-
-
-
-
-
-
-
-
-
-
+ }
  if ($control == true) {
    $host = $_SERVER['HTTP_HOST'];
    $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
