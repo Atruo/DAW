@@ -10,7 +10,8 @@ require_once('actualizarfecha.inc');
 
 
   <form class="form_relleno" action="registro_datos.php" method="post" id="form_registro">
-    <p><label>Usuario: <input type="text" name="nombre" value=""></label></p>
+    <p><label>Nombre: <input type="text" name="nombre" value=""></label></p>
+    <p><label>Usuario: <input type="text" name="usu" value=""></label></p>
 
     <p><label>Contraseña: <input type="password" name="psw" value=""></label></p>
 
@@ -19,25 +20,15 @@ require_once('actualizarfecha.inc');
     <p><label>Email: <input type="text" name="email" value=""></label></p>
 
     <p><label>Sexo: <select name="sexo">
-          <option value="Masculino">Masculino</option>
-          <option value="Femenino">Femenino</option>
-          <option value="ninguno">No Contestar</option>
+          <option value=1>Masculino</option>
+          <option value=2>Femenino</option>
+          <option value=0>No Contestar</option>
         </select></label></p>
 
     <p><label>Fecha Nacimiento: <input type="date" name="nacido" value=""></label></p>
     <p><label>Pais de Residencia: <select name="pais">
       <?php
-          $mysqli = @new mysqli(
-                  'localhost',   // El servidor
-                  'root',    // El usuario
-                  '',          // La contraseña
-                  'pibd'); // La base de datos
-
-          if($mysqli->connect_errno) {
-            echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
-            echo '</p>';
-            exit;
-          }
+         require_once('base_datos.inc');
 
           // Ejecuta una sentencia SQL
           $sentencia = 'SELECT * FROM paises';
@@ -54,6 +45,25 @@ require_once('actualizarfecha.inc');
        ?>
 
         </select></label></p>
+        <p><label>Estilo: <select name="estilo">
+          <?php
+             require_once('base_datos.inc');
+
+              // Ejecuta una sentencia SQL
+              $sentencia = 'SELECT * FROM estilos';
+              if(!($resultado = $mysqli->query($sentencia))) {
+                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+                echo '</p>';
+                exit;
+              }
+                 while($fila = $resultado->fetch_assoc()) {
+                   echo '<option value="'.$fila['IdEstilo'].'">'.$fila['Nombre'].'</option>';
+                 }
+
+
+           ?>
+
+            </select></label></p>
     <p><label>Ciudad de Residencia: <input type="text" name="ciudad" value=""></label></p>
      <p><label>Foto Perfil: <input type="file" name="foto_perfil"></label></p>
 

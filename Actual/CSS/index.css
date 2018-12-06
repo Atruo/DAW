@@ -10,7 +10,7 @@
 #lista_estilos{
   text-align: center;
 }
-#lista_estilos>h4>span{
+#lista_estilos>h4>a{
   text-decoration: underline;
 }
 h1.Titulo{

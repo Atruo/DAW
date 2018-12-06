@@ -21,7 +21,7 @@ require_once('actualizarfecha.inc');
 
     $mysqli = @new mysqli(
             'localhost',   // El servidor
-            'root',    // El usuario
+            'daw',    // El usuario
             '',          // La contraseña
             'pibd'); // La base de datos
 

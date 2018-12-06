@@ -17,7 +17,7 @@ require_once('actualizarfecha.inc');
    echo '<section id="ultimas_fotos">';
    $mysqli = @new mysqli(
            'localhost',   // El servidor
-           'root',    // El usuario
+           'daw',    // El usuario
            '',          // La contraseña
            'pibd'); // La base de datos
 

@@ -9,7 +9,7 @@ require_once('actualizarfecha.inc');
 
   $mysqli = @new mysqli(
           'localhost',   // El servidor
-          'root',    // El usuario
+          'daw',    // El usuario
           '',          // La contraseña
           'pibd'); // La base de datos
 
@@ -20,7 +20,7 @@ require_once('actualizarfecha.inc');
   }
 
   // Ejecuta una sentencia SQL
-  $sentencia = 'SELECT Titulo, Usuario, IdUsuario, Descripcion  FROM usuarios,albumes where usuarios.IdUsuario = albumes.Usuario';
+  $sentencia = 'SELECT Titulo, Usuario, IdUsuario, Descripcion, IdAlbum  FROM usuarios,albumes where usuarios.IdUsuario = albumes.Usuario';
   if(!($resultado = $mysqli->query($sentencia))) {
     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
     echo '</p>';
@@ -29,7 +29,7 @@ require_once('actualizarfecha.inc');
   echo "<h3> Estos son tús álbumes: </h3>";
   echo "<div id = 'lista_estilos'>";
   while ($fila = $resultado->fetch_assoc()) {
-    echo '<h4> <span>'.$fila['Titulo'].':</span>  '.$fila['Descripcion'].' </h4>';
+    echo '<h4> <a href = "./fotos_album.php?id='.$fila['IdAlbum'].'&usu='.$fila['IdUsuario'].'">'.$fila['Titulo'].':</a>  '.$fila['Descripcion'].' </h4>';
   }
   echo '</div>';
   ?>

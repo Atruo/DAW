@@ -9,20 +9,10 @@ require_once('barra_nav.inc');
 require_once('fecha.inc');
 
  // Conecta con el servidor de MySQL
- $mysqli = @new mysqli(
-         'localhost',   // El servidor
-         'root',    // El usuario
-         '',          // La contraseña
-         'pibd'); // La base de datos
-
- if($mysqli->connect_errno) {
-   echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
-   echo '</p>';
-   exit;
- }
+ require_once('base_datos.inc');
 
  // Ejecuta una sentencia SQL
- $sentencia = 'SELECT IdFoto, Titulo, FRegistro, NomPais, Fichero, Alternativo  FROM fotos, paises where Pais = IdPais';
+ $sentencia = 'SELECT IdFoto, Titulo, FRegistro, NomPais, Fichero, Alternativo  FROM fotos, paises where Pais = IdPais LIMIT 6';
  if(!($resultado = $mysqli->query($sentencia))) {
    echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
    echo '</p>';
