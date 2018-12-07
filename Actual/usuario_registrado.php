@@ -18,7 +18,7 @@ require_once('actualizarfecha.inc');
     echo '<div id="enlaces_uReg">
       <a href="./modificar.php">Modificar Datos</a>
       <a href="./configurar.php">Configurar</a>
-      <a href="#">Darse de Baja</a>
+      <a href="./darse_de_baja.php">Darse de Baja</a>
       <a href="./nueva_foto.php">Añade Foto</a>
       <a href="./visualizar.php">Visualizar Álbumes</a>
       <a href="./crear_album.php">Crear Álbum</a>

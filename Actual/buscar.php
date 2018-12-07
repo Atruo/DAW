@@ -16,20 +16,10 @@ require_once('actualizarfecha.inc');
       <option value="-1">No filtrar</option>
 
       <?php
-          $mysqli = @new mysqli(
-                  'localhost',   // El servidor
-                  'daw',    // El usuario
-                  '',          // La contraseña
-                  'pibd'); // La base de datos
-
-          if($mysqli->connect_errno) {
-            echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
-            echo '</p>';
-            exit;
-          }
+        require_once('base_datos.inc');
 
           // Ejecuta una sentencia SQL
-          $sentencia = 'SELECT * FROM paises';
+          $sentencia = 'SELECT * FROM paises order by NomPais asc';
           if(!($resultado = $mysqli->query($sentencia))) {
             echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
             echo '</p>';

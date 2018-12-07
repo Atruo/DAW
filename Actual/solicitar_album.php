@@ -56,30 +56,20 @@ require_once('actualizarfecha.inc');
   <label>Código Postal: <input type="text" name="cpostal" value="" ></label>
   <label>Localidad: <input type="text" name="localidad" value="" ></label>
 
-  <label>Provincia:  <select id="busqueda_provincia">
+  <label>Provincia:  <select id="busqueda_provincia" name="busqueda_provincia">
 
  <option value='alava'>Álava</option>
  <option value='albacete'>Albacete</option>
  <option value='alicante'>Alicante/Alacant</option>
 </select></label>
 
-<p><label>País: <select id="busqueda_pais">
+<p><label>País: <select id="busqueda_pais" name="busqueda_pais">
 
   <?php
-      $mysqli = @new mysqli(
-              'localhost',   // El servidor
-              'daw',    // El usuario
-              '',          // La contraseña
-              'pibd'); // La base de datos
-
-      if($mysqli->connect_errno) {
-        echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
-        echo '</p>';
-        exit;
-      }
+      require_once('base_datos.inc');
 
       // Ejecuta una sentencia SQL
-      $sentencia = 'SELECT * FROM paises';
+      $sentencia = 'SELECT * FROM paises order by NomPais asc';
       if(!($resultado = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
         echo '</p>';

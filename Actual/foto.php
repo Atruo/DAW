@@ -19,17 +19,7 @@ require_once('actualizarfecha.inc');
     $id = $_GET["id"];
     $url ='';
 
-    $mysqli = @new mysqli(
-            'localhost',   // El servidor
-            'daw',    // El usuario
-            '',          // La contraseña
-            'pibd'); // La base de datos
-
-    if($mysqli->connect_errno) {
-      echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
-      echo '</p>';
-      exit;
-    }
+    require_once('base_datos.inc');
 
     // Ejecuta una sentencia SQL
     $sentencia = 'SELECT IdFoto,Titulo, Descripcion, fotos.FRegistro, Fichero, Alternativo, fotos.Pais, NomUsuario, Album  FROM fotos, usuarios where IdUsuario = fotos.Usuario';

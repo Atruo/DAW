@@ -31,7 +31,7 @@ require_once('actualizarfecha.inc');
          require_once('base_datos.inc');
 
           // Ejecuta una sentencia SQL
-          $sentencia = 'SELECT * FROM paises';
+          $sentencia = 'SELECT * FROM paises order by NomPais asc';
           if(!($resultado = $mysqli->query($sentencia))) {
             echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
             echo '</p>';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-12-2018 a las 11:28:39
+-- Tiempo de generación: 07-12-2018 a las 10:40:50
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -40,7 +40,8 @@ CREATE TABLE `albumes` (
 --
 
 INSERT INTO `albumes` (`IdAlbum`, `Titulo`, `Descripcion`, `Usuario`) VALUES
-(1, 'prueba', 'album de prueba', 5);
+(1, 'prueba', 'album de prueba', 5),
+(2, 'otro', 'otro album', 6);
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,6 @@ CREATE TABLE `estilos` (
 --
 
 INSERT INTO `estilos` (`IdEstilo`, `Nombre`, `Descripcion`, `Fichero`) VALUES
-(1, 'Estilo', 'Un estilo muy bueno', './css'),
 (2, 'normal', 'estilo normal de css', 'CSS/index.css'),
 (3, 'alternativo', 'estilo alternativo de css', 'CSS/contraste.css');
 
@@ -95,7 +95,8 @@ INSERT INTO `fotos` (`IdFoto`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Album`
 (12, 'bonito', 'bonito pero atun', '2018-11-17', 1, 1, 'foto.jpg', 'bonito', '2018-11-22 14:54:44', 6),
 (13, 'queso mercadona', 'mercadona', '2018-11-18', 3, 1, 'foto2.jpg', 'mercadona', '2018-11-22 14:55:45', 5),
 (14, 'dhhfd', 'bonito pero atun', '2018-11-17', 1, 1, 'foto.jpg', 'bonito', '2018-11-22 14:54:44', 6),
-(15, 'ukyhu', 'mercadona', '2018-11-18', 3, 1, 'foto2.jpg', 'mercadona', '2018-11-22 14:55:45', 5);
+(15, 'ukyhu', 'mercadona', '2018-11-18', 3, 1, 'foto2.jpg', 'mercadona', '2018-11-22 14:55:45', 5),
+(16, 'prueba', 'prueb', '0000-00-00', 2, 2, 'image11.jpg', 'prueba', '2018-12-06 17:15:05', 6);
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,9 @@ CREATE TABLE `solicitudes` (
 --
 
 INSERT INTO `solicitudes` (`IdSolicitud`, `Album`, `Nombre`, `Titulo`, `Descripcion`, `Email`, `Calle`, `Numero`, `Piso`, `Puerta`, `Codigo Postal`, `Localidad`, `Provincia`, `Pais`, `Color`, `Copias`, `Resolucion`, `Fecha`, `IColor`, `FRegistro`, `Coste`) VALUES
-(1, 1, 'nuevo', 'nuevo album', 'album nuevo', 'usuario2@gmail.com', 'falsa', 123, 1, 2, 123, 'alicante', 'alicante', 2, '#ffff', 2, 1, '2018-11-14', 1, '2018-11-22 11:10:27', 13);
+(1, 1, 'nuevo', 'nuevo album', 'album nuevo', 'usuario2@gmail.com', 'falsa', 123, 1, 2, 123, 'alicante', 'alicante', 2, '#ffff', 2, 1, '2018-11-14', 1, '2018-11-22 11:10:27', 13),
+(2, 2, 'prueba', 'pruebna', 'ngfmdsgn', '123', '132', 13, 132, 132, 132, '31', 'albacete', 2, '1', 1, 150, '0000-00-00', 1, '2018-12-06 17:58:35', 1.05),
+(3, 1, 'fecha', 'hecha', 'na', 'flaso@gmail.com', '123', 123, 123, 123, 123, 'dsf', 'alava', 1, '1', 1, 150, '2018-12-23', 1, '2018-12-07 09:19:02', 1.05);
 
 -- --------------------------------------------------------
 
@@ -179,10 +182,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`IdUsuario`, `NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`, `Estilo`) VALUES
-(5, 'usuario2', '123', 'usuario2@gmail.com', 1, '2018-11-07', 'alicante', 2, 9, '2018-11-22 14:34:29', 1),
-(6, 'usuario', '123', 'usuario@gmail.com', 1, '2018-11-10', 'alicante', 1, 8, '2018-11-22 14:34:19', 2),
+(5, 'usuario2', '123', 'usuario2@gmail.com', 1, '2018-11-07', 'alicante', 2, 9, '2018-12-06 10:55:56', 2),
+(6, 'usuario', '123', 'usuario@gmail.com', 1, '2018-11-10', 'murcia', 2, 8, '2018-12-06 12:06:33', 2),
 (7, 'sergi', '123', 'mio@gmail.com', 2, '0000-00-00', 'alicante', 2, 9, '2018-12-04 11:12:32', 2),
-(8, 'mariolo', '123', 'mariolo@gmail.com', 1, '0000-00-00', 'alicante', 1, 9, '2018-12-04 11:13:38', 3);
+(8, 'ciego', '123', '123', 1, '0000-00-00', 'alicante', 2, 9, '2018-12-06 18:20:25', 3),
+(46, 'pepe', 'Pepe26_', 'pepe@gmail.com', 1, '1970-01-01', '123', 1, 9, '2018-12-07 09:17:19', 2);
 
 --
 -- Índices para tablas volcadas
@@ -241,7 +245,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `albumes`
 --
 ALTER TABLE `albumes`
-  MODIFY `IdAlbum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdAlbum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `estilos`
@@ -253,7 +257,7 @@ ALTER TABLE `estilos`
 -- AUTO_INCREMENT de la tabla `fotos`
 --
 ALTER TABLE `fotos`
-  MODIFY `IdFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `IdFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `paises`
@@ -265,13 +269,13 @@ ALTER TABLE `paises`
 -- AUTO_INCREMENT de la tabla `solicitudes`
 --
 ALTER TABLE `solicitudes`
-  MODIFY `IdSolicitud` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdSolicitud` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Restricciones para tablas volcadas
