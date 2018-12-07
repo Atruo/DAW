@@ -97,9 +97,12 @@ require_once('actualizarfecha.inc');
    // Cierra la conexión con la base de datos
 
    echo "<p>Nombre actualizado</p>";
+   header("Refresh:0");
   }
-
+if (!empty($_POST['email'])) {
     $punto = explode(".",$_POST['email']);
+}
+
   if (!empty($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)&& $_POST['psw'] == $psw && strlen($punto[count($punto)-1])>1 && strlen($punto[count($punto)-1])<5) {
 
    $nombre = $_POST['email'];
@@ -112,11 +115,12 @@ require_once('actualizarfecha.inc');
    // Cierra la conexión con la base de datos
 
    echo "<p>Email actualizado</p>";
+   header("Refresh:0");
   }
   if (!empty($_POST['nacimiento'])&& $_POST['psw'] == $psw) {
 
    $nombre = $_POST['nacimiento'];
-   $sentencia = "UPDATE usuarios SET FNacimiento = $nombre WHERE NomUsuario = '$datos' ";
+   $sentencia = "UPDATE usuarios SET FNacimiento = '$nombre' WHERE NomUsuario = '$datos' ";
    if(!mysqli_query($mysqli, $sentencia)) {
      echo mysqli_error($mysqli);
      die("Error: no se pudo realizar la inserción");
@@ -126,6 +130,7 @@ require_once('actualizarfecha.inc');
 
 
    echo "<p>FNacimiento actualizado</p>";
+   header("Refresh:0");
   }
 
   if (!empty($_POST['ciudad'])&& $_POST['psw'] == $psw) {
@@ -139,6 +144,7 @@ require_once('actualizarfecha.inc');
 
 
    echo "<p>Ciuad actualizado</p>";
+   header("Refresh:0");
   }
 
   if (!empty($_POST['pais']) && $_POST['pais']!=0 && $_POST['psw'] == $psw) {
@@ -153,6 +159,7 @@ require_once('actualizarfecha.inc');
    // Cierra la conexión con la base de datos
 
    echo "<p>Pais actualizado</p>";
+   header("Refresh:0");
   }
 
   if (!empty($_POST['estilo']) && $_POST['estilo']!=0 && $_POST['psw'] == $psw) {
@@ -170,6 +177,7 @@ require_once('actualizarfecha.inc');
    echo "<p>Estilo actualizado</p>";
    header("Refresh:0");
   }
+
   mysqli_close($mysqli);
   require_once('footer.inc');
    ?>
