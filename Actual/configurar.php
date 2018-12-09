@@ -48,6 +48,7 @@ require_once('barra_nav.inc');
      // Cierra la conexión con la base de datos
      mysqli_close($mysqli);
      echo "Estilo actualizado";
+     header("Refresh:0");
 
   }
   require_once('footer.inc');

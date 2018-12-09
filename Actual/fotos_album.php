@@ -7,17 +7,7 @@ require_once('actualizarfecha.inc');
   <?php
   require_once('barra_nav.inc');
 
-  $mysqli = @new mysqli(
-          'localhost',   // El servidor
-          'daw',    // El usuario
-          '',          // La contraseña
-          'pibd'); // La base de datos
-
-  if($mysqli->connect_errno) {
-    echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
-    echo '</p>';
-    exit;
-  }
+  require_once('base_datos.inc');
   $albumID = $_GET['id'];
   $usu = $_GET['usu'];
   // Ejecuta una sentencia SQL

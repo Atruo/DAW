@@ -12,7 +12,7 @@ require_once('fecha.inc');
  require_once('base_datos.inc');
 
  // Ejecuta una sentencia SQL
- $sentencia = 'SELECT IdFoto, Titulo, FRegistro, NomPais, Fichero, Alternativo  FROM fotos, paises where Pais = IdPais LIMIT 6';
+ $sentencia = 'SELECT IdFoto, Titulo, FRegistro, NomPais, Fichero, Alternativo  FROM fotos, paises where Pais = IdPais  order by FRegistro desc LIMIT 6';
  if(!($resultado = $mysqli->query($sentencia))) {
    echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
    echo '</p>';

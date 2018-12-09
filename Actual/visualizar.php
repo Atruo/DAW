@@ -7,20 +7,11 @@ require_once('actualizarfecha.inc');
   <?php
   require_once('barra_nav.inc');
 
-  $mysqli = @new mysqli(
-          'localhost',   // El servidor
-          'daw',    // El usuario
-          '',          // La contraseña
-          'pibd'); // La base de datos
-
-  if($mysqli->connect_errno) {
-    echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error;
-    echo '</p>';
-    exit;
-  }
+  require_once('base_datos.inc');
 
   // Ejecuta una sentencia SQL
-  $sentencia = 'SELECT Titulo, Usuario, IdUsuario, Descripcion, IdAlbum  FROM usuarios,albumes where usuarios.IdUsuario = albumes.Usuario';
+    $datos = $_COOKIE['recuerda_usu'];
+  $sentencia = "SELECT Titulo, Usuario, IdUsuario, Descripcion, IdAlbum  FROM usuarios,albumes where usuarios.IdUsuario = albumes.Usuario and NomUsuario = '$datos'" ;
   if(!($resultado = $mysqli->query($sentencia))) {
     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
     echo '</p>';

@@ -28,11 +28,12 @@ require_once('actualizarfecha.inc');
     $fila = $resultado->fetch_assoc();
     $estilo_actual = $fila['Nombre'];
       echo '<form class="form_relleno" action="modificar.php" method="post" id="form_registro">';
-      echo '<p><label>Nombre: '.$fila['NomUsuario'].' <input type="text" name="nombre" value=""></label></p>';
-      echo '<p><label>Email: '.$fila['Email'].' <input type="text" name="email" value=""></label></p>';
-      echo '<p><label>FNacimiento: '.$fila['FNacimiento'].' <input type="date" name="nacimiento" value=""></label></p>';
-      echo '<p><label>Ciudad: '.$fila['Ciudad'].' <input type="text" name="ciudad" value=""></label></p>';
-      echo '<p><label>Pais: '.$fila['NomPais'].' <select name="pais">';
+      echo '<p><label>Nombre: <span class = "negrita">'.$fila['NomUsuario'].'</span> <input type="text" name="nombre" value=""></label></p>';
+      echo '<p><label>Email: <span class = "negrita">'.$fila['Email'].'</span> <input type="text" name="email" value=""></label></p>';
+      echo '<p><label>Contraseña: <input type="password" name="pswn" value=""></label></p>';
+      echo '<p><label>FNacimiento: <span class = "negrita">'.$fila['FNacimiento'].'</span> <input type="date" name="nacimiento" value=""></label></p>';
+      echo '<p><label>Ciudad: <span class = "negrita">'.$fila['Ciudad'].'</span> <input type="text" name="ciudad" value=""></label></p>';
+      echo '<p><label>Pais: <span class = "negrita">'.$fila['NomPais'].'</span> <select name="pais">';
       $sentencia = 'SELECT * FROM paises order by NomPais asc';
       if(!($resultado = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
@@ -45,7 +46,7 @@ require_once('actualizarfecha.inc');
          }
       echo "</select></label></p>";
 
-        echo '<p><label>Estilo: '.$estilo_actual.' <select name="estilo">';
+        echo '<p><label>Estilo: <span class = "negrita">'.$estilo_actual.'</span> <select name="estilo">';
       $sentencia = 'SELECT * FROM estilos';
       if(!($resultado = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
@@ -131,6 +132,21 @@ if (!empty($_POST['email'])) {
 
    echo "<p>FNacimiento actualizado</p>";
    header("Refresh:0");
+  }
+  if (!empty($_POST['pswn'])&& $_POST['psw'] == $psw  && preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z0-9-_]{6,15}$/",$_POST['pswn'])) {
+
+   $nombre = $_POST['pswn'];
+   $sentencia = "UPDATE usuarios SET Clave = '$nombre' WHERE NomUsuario = '$datos' ";
+   if(!mysqli_query($mysqli, $sentencia)) {
+     echo mysqli_error($mysqli);
+     die("Error: no se pudo realizar la inserción");
+   }
+
+   // Cierra la conexión con la base de datos
+
+
+   echo "<p>Contraseña actualizada</p>";
+
   }
 
   if (!empty($_POST['ciudad'])&& $_POST['psw'] == $psw) {

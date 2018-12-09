@@ -57,6 +57,9 @@ h3{
 #precio{
    font-weight: bold;
 }
+.negrita{
+  font-weight: bold;
+}
 
 input[type=text], select {
 
